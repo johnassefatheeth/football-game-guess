@@ -89,23 +89,12 @@ elif option == "Whole Season":
             all_teams = df['HomeTeam'].unique()
 
             # Calculate the result of every possible game for the selected team
-            points = 0
-            teams = 0
+
             for opponent_team in all_teams:
                 if opponent_team != selected_team:
                     result = predict_match_result(selected_team, opponent_team)
                     st.write(f"{selected_team} vs {opponent_team}: {result}")
-                    if result == selected_team:
-                        points += 3
-                    elif result == 'DRAW':
-                        points += 1
                     result2 = predict_match_result(opponent_team, selected_team)
                     st.write(f"{opponent_team} vs {selected_team}: {result2}")
-                    if result2 == selected_team:
-                        points += 3
-                    elif result2 == 'DRAW':
-                        points += 1
-                teams += 1
 
-            st.write(f"the total points earned by the team are {points}")
-            st.write(f"the total games played by the team are {teams}")
+
