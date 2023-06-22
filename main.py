@@ -58,7 +58,7 @@ if option == "Specific Game":
                     away_goals = round(model_away_goals.predict(new_data)[0])
 
                     # Step 5: Display Prediction Result
-                    print("Prediction:")
+                    # print("Prediction:")
                     st.write(f"Prediction: {home_team} {home_goals} : {away_goals} {away_team}")
 
 elif option == "Whole Season":
